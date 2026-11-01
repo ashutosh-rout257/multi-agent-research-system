@@ -57,7 +57,7 @@ Be detailed, factual, and professional. Make sure to include 3 to 5 actual hyper
 
 writer_chain = writer_prompt | llm | StrOutputParser()
 
-# Critic chain - Kept completely unchanged
+# Critic chain 
 critic_prompt = ChatPromptTemplate.from_messages([
     ("system", "You are a sharp and constructive research critic. Be honest and specific."),
     ("human", """Review the research report below and evaluate it strictly.

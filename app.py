@@ -1,4 +1,15 @@
+import os
 import streamlit as st
+from dotenv import load_dotenv
+
+load_dotenv()
+
+for key in ["TAVILY_API_KEY", "GEMINI_API_KEY", "GOOGLE_API_KEY"]:
+    try:
+        if key in st.secrets:
+            os.environ[key] = st.secrets[key]
+    except Exception:
+        pass 
 
 # Page Configuration
 st.set_page_config(
